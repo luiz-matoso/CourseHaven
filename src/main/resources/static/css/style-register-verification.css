@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.bg-custom{
+    background-color: #121212;
+}
+
+.role-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #121212;
+    padding: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.text-center{
+    color: white;
+    margin-bottom: 42px;
+}
+
+.role-btn {
+    display: none;
+
+}
+
+.role-label {
+    display: inline-block;
+    padding: 10px 40px;
+    margin: 10px;
+    border: 1px solid #E32652;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: #121212;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.role-btn:checked + .role-label {
+    background-color: #E32652;
+    color: #121212;
+}
+
+.btn-submit{
+    background-color: #121212;
+    border: 1px solid #E32652;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 42px;
+    padding: 10px 52px;
+}
+
+.btn-submit:hover{
+    background-color: #E32652;
+}
+
+
+h2 {
+    margin-bottom: 20px;
+}

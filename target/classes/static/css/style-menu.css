@@ -1,0 +1,70 @@
+/* Buttons, inputs and labels */
+
+a {
+	text-decoration: none !important;
+}
+
+.text-purple {
+	color: #6A55FA;
+}
+
+.bg-dark-custom {
+	background-color: #121212;
+}
+
+.text-light-custom {
+	color: #e0e0e0;
+}
+
+.form-control-dark {
+	background-color: #272727;
+	color: #fff;
+	border: 0px solid #495057;
+}
+
+.form-control-dark:focus {
+	background-color: #333333;
+	color: #fff;
+}
+
+.form-control-dark::placeholder {
+	color: #6c757d;
+}
+
+.table-custom-bg th,
+.table-custom-bg td {
+	background-color: #1b1b1b;
+}
+
+.list-group-item-dark {
+	background-color: #272727;
+	border: 0px;
+	color: #fff;
+}
+
+.list-group-item-dark:hover {
+	background-color: #333333;
+}
+
+.list-group-item-dark.active {
+	background-color: #6A55FA;
+	color: #fff;
+}
+
+/* LOGO */
+
+.navbar-brand {
+	font-weight: bold;
+	background: -webkit-linear-gradient(to right, #a044ff, #6a3093);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: -moz-linear-gradient(to right, #a044ff, #6a3093);
+	/* FF 3.6+ */
+	background: -o-linear-gradient(to right, #a044ff, #6a3093);
+	/* Opera 11.1+ */
+	background: -ms-linear-gradient(to right, #a044ff, #6a3093);
+	/* IE 10+ */
+	background: linear-gradient(to right, #a044ff, #6a3093);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="https://thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.ibb.co/N6VG66D/ICON.png">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style-register-teacher.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Teacher registration</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-6 right bg-custom">
+                <div class="input-box">
+                   <header class="header-text">Create an account</header>
+                   <form th:action="@{/register/teacher}" method="post" th:object="${teacher}">
+                       <div class="input-field">
+                            <input type="text" class="input" id="first-name" required="true" autocomplete="off" th:field="*{firstName}">
+                            <label for="first-name">First name</label>
+                        </div> 
+                       <div class="input-field">
+                            <input type="text" class="input" id="last-name" required="true" autocomplete="off" th:field="*{lastName}">
+                            <label for="last-name">Last name</label>
+                        </div> 
+                       <div class="input-field">
+                            <input type="text" class="input" id="username" required="true" th:field="*{username}">
+                            <label for="username">Username</label>
+                        </div> 
+                       <div class="input-field">
+                            <input type="email" class="input" id="email" required="true" th:field="*{email}">
+                            <label for="email">Email</label>
+                        </div> 
+                       <div class="input-field">
+                            <input type="password" class="input" id="password" required="true" th:field="*{password}">
+                            <label for="password">Password</label>
+                        </div> 
+                       <div class="input-fields-row">
+                           <div class="input-field">
+                                <input type="text" class="input" id="qualification" required="true" th:field="*{qualification}">
+                                <label for="qualification">Qualification</label>
+                            </div> 
+                           <div class="input-field">
+                                <input type="text" class="input" id="yearsOfExperience" required="true" th:field="*{yearsOfExperience}">
+                                <label for="yearsOfExperience">Years of exp.</label>
+                            </div> 
+                       </div>
+                       <div class="input-field">
+                            <input type="submit" class="submit" value="Sign Up">
+                       </div> 
+                   </form>
+                   <div class="signin">
+                    <span>Already have an account? <a href="/login">Sign in here</a></span>
+                   </div>
+                </div>  
+            </div>
+
+            <div class="col-md-6 side-image">
+                <a href="/home">
+                    <img href="/home" src="https://i.ibb.co/2YFZddc/Sem-T-tulo-2.png" class="img-logo" alt="">
+                </a>
+                <div class="text">
+                    <p>"I touch the future. I teach." <i>- Christa McAuliffe</i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

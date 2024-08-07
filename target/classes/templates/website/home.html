@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CourseHaven</title>
+    <link rel="icon" href="https://i.ibb.co/N6VG66D/ICON.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style-home.css}">
+</head>
+<body class="bg-dark-custom text-light-custom">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a href="/home">
+                <img src="https://i.ibb.co/2YFZddc/Sem-T-tulo-2.png" alt="Logo" class="d-inline-block align-text-top img-logo">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light-custom" aria-current="page" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light-custom" href="/login">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4" th:each="course : ${listCourse}">
+                <div class="card mb-4">
+					<!-- <h6 class="card-promotion">25% OFF</h6> !-->
+                    <video class="card-img-top" controls>
+                        <source th:src="@{${course.video}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${course.name}">Course Name</h5>
+						<p class="card-price" th:text="'$ ' + ${course.formattedPrice}"></p>
+                        <p class="card-text" th:text="${course.description}">Course Description</p>
+						<p class="card-text" th:text="'Language: ' + ${course.language}">Course Language</p>
+						<p class="card-text" th:text="'Category: ' + ${course.category}">Course Category</p>
+						<p class="card-text" th:text="${course.minutes} + ' minutes'">Course Minutes</p>
+						<p class="card-text last-card" th:each="teacher : ${course.teachers}" th:text="'Teacher: ' + ${teacher.name}">Course Language</p>						
+                        <a href="#" class="btn btn-primary">Watch now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

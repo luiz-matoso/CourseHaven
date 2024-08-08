@@ -25,7 +25,7 @@
                         <a class="nav-link active text-light-custom" aria-current="page" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light-custom" href="/login">Sign in</a>
+                        <a class="nav-link text-light-custom" href="/signin">Sign in</a>
                     </li>
                 </ul>
             </div>
@@ -34,21 +34,20 @@
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-4" th:each="course : ${listCourse}">
+            <div class="col-md-4" th:each="course : ${courses}">
                 <div class="card mb-4">
-					<!-- <h6 class="card-promotion">25% OFF</h6> !-->
                     <video class="card-img-top" controls>
-                        <source th:src="@{${course.video}}" type="video/mp4">
+                        <source th:src="@{${course.demoVideo}}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <div class="card-body">
-                        <h5 class="card-title" th:text="${course.name}">Course Name</h5>
-						<p class="card-price" th:text="'$ ' + ${course.formattedPrice}"></p>
+                        <h5 class="card-title" th:text="${course.title}">Course Name</h5>
+                        <p class="card-price" th:text="'$ ' + ${course.price}">Course Price</p>
                         <p class="card-text" th:text="${course.description}">Course Description</p>
-						<p class="card-text" th:text="'Language: ' + ${course.language}">Course Language</p>
-						<p class="card-text" th:text="'Category: ' + ${course.category}">Course Category</p>
-						<p class="card-text" th:text="${course.minutes} + ' minutes'">Course Minutes</p>
-						<p class="card-text last-card" th:each="teacher : ${course.teachers}" th:text="'Teacher: ' + ${teacher.name}">Course Language</p>						
+                        <p class="card-text" th:text="'Language: ' + ${course.language}">Course Language</p>
+                        <p class="card-text" th:text="'Category: ' + ${course.category}">Course Category</p>
+                        <p class="card-text" th:text="${course.minutes} + ' minutes'">Course Duration</p>
+                        <p class="card-text last-card" th:text="'Teacher: ' + ${course.createdBy.username}">Course Teacher</p>						
                         <a href="#" class="btn btn-primary">Watch now</a>
                     </div>
                 </div>

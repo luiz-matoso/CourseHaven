@@ -24,7 +24,7 @@
             <div class="col-md-6 right bg-custom">
                 <div class="input-box">
                    <header class="header-text">Log in to your account</header>
-                   <form th:action="@{/auth/signin}" method="post">
+                   <form th:action="@{/authentication}" method="post">
                        <div class="input-field">
                             <input type="text" class="input" id="username" name="username" required="true" autocomplete="off">
                             <label for="username">Username</label>
@@ -41,7 +41,7 @@
                        </div>
                    </form>
                    <div class="signin">
-                    <span>Don't have an account? <a href="/auth/signup">Sign up here</a></span>
+                    <span>Don't have an account? <a href="/signup">Sign up here</a></span>
                    </div>
                 </div>  
             </div>

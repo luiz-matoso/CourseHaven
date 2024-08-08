@@ -15,7 +15,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <div class="container main">
         <div class="row">
             <div class="col-md-6 right bg-custom">
-                <form action="#" th:action="@{/auth/signup}" th:object="${user}" method="post">
+                <form action="#" th:action="@{signup}" th:object="${user}" method="post">
                     <div class="input-box">
                        <header class="header-text">Create an account</header>
                            <div class="input-field">
@@ -50,7 +50,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                            </div> 
                        </form>
                        <div class="signin">
-                        <span>Already have an account? <a href="/auth/signin">Sign in here</a></span>
+                        <span>Already have an account? <a href="/signin">Sign in here</a></span>
                        </div>
                     </div>  
                 </div>

@@ -26,12 +26,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authz -> authz
-                .requestMatchers("/signup", "/signin").permitAll()
+                .requestMatchers("/signup", "/signin", "/css/**").permitAll()
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
                 .loginPage("/signin")
-                .loginProcessingUrl("/perform_login")
+                .loginProcessingUrl("/authentication")
                 .defaultSuccessUrl("/home", true)
                 .failureUrl("/signin?error=true")
             )

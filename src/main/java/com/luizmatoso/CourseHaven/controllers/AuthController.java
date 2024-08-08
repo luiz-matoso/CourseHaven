@@ -19,13 +19,13 @@ public class AuthController {
 
     @GetMapping("/signin")
     public String login(Model model) {
-        return "signin";
+        return "auth/signin";
     }
 
     @GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("user", new User());
-        return "signup";
+        return "auth/signup";
     }
 
     @PostMapping("/signup")

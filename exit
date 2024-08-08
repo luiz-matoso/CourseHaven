@@ -1,0 +1,23 @@
+[33mcommit 77c401bda0087af3bbc8bcbc31deb55ea9f0f261[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: luizmatoso <luizhmatoso1340@gmail.com>
+Date:   Wed Aug 7 21:57:24 2024 -0300
+
+    Authentication config
+
+[33mcommit cf66cfd589c025016929b9e0faa99b93eae1bf38[m
+Author: luizmatoso <luizhmatoso1340@gmail.com>
+Date:   Wed Aug 7 15:20:06 2024 -0300
+
+    Adding front-end
+
+[33mcommit d5ff1229d3a6e32744bd3f2c1c6653300ac14987[m
+Author: luizmatoso <luizhmatoso1340@gmail.com>
+Date:   Wed Aug 7 15:18:51 2024 -0300
+
+    Entities, repositories & dto's
+
+[33mcommit 606875cb4b5b131b6f5f9ba0fbe486f661f57903[m
+Author: luizmatoso <luizhmatoso1340@gmail.com>
+Date:   Wed Aug 7 14:25:38 2024 -0300
+
+    Project created

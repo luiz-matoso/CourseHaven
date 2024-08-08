@@ -1,7 +1,6 @@
 package com.luizmatoso.CourseHaven.dto;
 
 public class CourseDTO {
-    private Integer id;
     private String title;
     private String description;
     private Double price;
@@ -10,14 +9,6 @@ public class CourseDTO {
     private String category;
     private String language;
     private Integer createdById; 
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

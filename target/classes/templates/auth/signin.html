@@ -13,9 +13,8 @@
     <div class="container main">
         <div class="row">
             <div class="col-md-6 side-image">
-                <!-------------      image     ------------->
                 <a href="/home">
-                    <img href="/home" src="https://i.ibb.co/2YFZddc/Sem-T-tulo-2.png" class="img-logo" alt="">
+                    <img src="https://i.ibb.co/2YFZddc/Sem-T-tulo-2.png" class="img-logo" alt="">
                 </a>
                 <div class="text">
                     <p>"Your time is limited, so don't waste it living someone else's life." <i>- Steve Jobs</i></p>
@@ -25,7 +24,7 @@
             <div class="col-md-6 right bg-custom">
                 <div class="input-box">
                    <header class="header-text">Log in to your account</header>
-                   <form th:action="@{/signin}" method="post">
+                   <form th:action="@{/auth/signin}" method="post">
                        <div class="input-field">
                             <input type="text" class="input" id="username" name="username" required="true" autocomplete="off">
                             <label for="username">Username</label>
@@ -37,12 +36,12 @@
                        <div class="input-field">
                             <input type="submit" class="submit" value="Sign In">
                        </div> 
-                       <div th:if="${param.error}">
-                           <p class="error" th:text="'Invalid username or password'">Invalid username or password</p>
+                       <div th:if="${error}">
+                           <p class="error" th:text="${error}">Invalid username or password</p>
                        </div>
                    </form>
                    <div class="signin">
-                    <span>Don't have an account? <a href="/register-verification">Sign up here</a></span>
+                    <span>Don't have an account? <a href="/auth/signup">Sign up here</a></span>
                    </div>
                 </div>  
             </div>

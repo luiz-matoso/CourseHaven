@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.luizmatoso.CourseHaven.entities.Course;
 import com.luizmatoso.CourseHaven.entities.User;
@@ -40,10 +41,17 @@ public class CourseController {
     }
 
     @GetMapping("/courses/create")
-    public String showCreateCourseForm(Model model) {
-        model.addAttribute("course", new Course());
-        return "website/create-course";
+    public String showCreateCourseForm(Model model, @RequestParam(required = false) Long courseId) {
+        Course course;
+        if (courseId != null) {
+            course = courseService.findCourseById(courseId);
+        } else {
+            course = new Course();
+        }
+        model.addAttribute("course", course);
+        return "website/post-course";
     }
+
 
     @PostMapping("/courses")
     public String createCourse(@ModelAttribute Course course, Principal principal) {

@@ -52,15 +52,12 @@ public class CourseController {
         return "website/post-course";
     }
 
-
     @PostMapping("/courses")
-    public String createCourse(@ModelAttribute Course course, Principal principal) {
-        // Pega o usuário logado
-        User user = userService.findByUsername(principal.getName());
+    public String createCourse(@ModelAttribute Course course, Principal loggedUser) {
+        User user = userService.findByUsername(loggedUser.getName());
         course.setCreatedBy(user);
-        
-        // Salva o curso
         courseService.saveCourse(course, user.getId());
         return "redirect:/home";
     }
+
 }

@@ -9,4 +9,5 @@ import com.luizmatoso.CourseHaven.entities.User;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
     List<Course> findByCreatedBy(User createdby);
+    List<Course> findByCreatedById(Long userId);
 }

@@ -27,6 +27,7 @@ public class SecurityConfig {
         http
             .authorizeHttpRequests(authz -> authz
                 .requestMatchers("/signup", "/signin", "/css/**").permitAll()
+                .requestMatchers("/teacher/management").hasAuthority("ROLE_TEACHER")
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
@@ -34,6 +35,9 @@ public class SecurityConfig {
                 .loginProcessingUrl("/authentication")
                 .defaultSuccessUrl("/home", true)
                 .failureUrl("/signin?error=true")
+            )
+            .exceptionHandling(exceptions -> exceptions
+            .accessDeniedPage("/error/403") // Configura a página personalizada para acesso negado
             )
             .logout(logout -> logout
                 .logoutUrl("/perform_logout")

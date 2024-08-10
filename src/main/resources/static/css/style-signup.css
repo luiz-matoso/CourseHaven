@@ -17,19 +17,19 @@
     min-height: 100vh;
 }
 
-.img-logo{
+.img-logo {
     width: 80px;
     height: auto;
     transition: transform .6s;
 }
 
-.img-logo:hover{
+.img-logo:hover {
     cursor: pointer;
     transform: scale(1.2);
 }
 
 .side-image {
-    background-image: url("https://i.ibb.co/ScWWMSf/teste2.png");
+    background-image: url("https://i.ibb.co/Vj47XVp/teste5.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -99,6 +99,7 @@ i {
     flex-direction: column;
     position: relative;
     padding: 0 10px;
+    margin-bottom: 20px; /* Add margin-bottom to all input fields */
 }
 
 .input {
@@ -108,7 +109,6 @@ i {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     outline: none;
-    margin-bottom: 20px;
     color: #e5e8ee; 
 }
 
@@ -131,6 +131,33 @@ i {
 .input-field .input:focus,
 .input-field .input:valid {
     border-bottom: 1px solid #E32652; 
+}
+
+.input-field select.input {
+    height: 45px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    color: #e5e8ee;
+    padding: 10px;
+    box-sizing: border-box;
+    appearance: none; /* Remove default styling */
+    background-color: transparent;
+}
+
+.input-field select.input:focus {
+    border-bottom: 1px solid #E32652; 
+}
+
+.input-field select.input option {
+    background-color: #121212;
+    color: #e5e8ee;
+}
+
+.input-field select.input option[disabled] {
+    color: rgba(229, 232, 238, 0.6); /* Placeholder color */
 }
 
 .submit {

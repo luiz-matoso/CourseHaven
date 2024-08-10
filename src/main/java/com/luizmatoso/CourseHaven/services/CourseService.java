@@ -36,6 +36,9 @@ public class CourseService {
         course.setCreatedBy(user);
         courseRepository.save(course);
     }
-    
+
+    public List<Course> findCoursesByUser(Long userId) {
+        return courseRepository.findByCreatedById(userId);
+    }
 
 }

@@ -1,8 +1,6 @@
 package com.luizmatoso.CourseHaven.enums;
 
 public enum UserRole {
-
-    STUDENT,
-    TEACHER
-
+    ROLE_STUDENT,
+    ROLE_TEACHER
 }

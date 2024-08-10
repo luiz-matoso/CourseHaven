@@ -32,7 +32,7 @@ public class TeacherCoursesController {
         return "website/teacher-management";
     }
 
-    @GetMapping("/my-courses")
+    @GetMapping("/teacher/my/courses")
     public String showMyCourses(Model model, Principal loggedUser) {
         User user = userService.findByUsername(loggedUser.getName());
         List<Course> myCourses = courseService.findCoursesByUser(user.getId());
@@ -40,7 +40,7 @@ public class TeacherCoursesController {
         return "website/my-courses";
     }
 
-    @GetMapping("/create-course")
+    @GetMapping("/teacher/create/courses")
     public String createCoursePage() {
         return "website/create-course";
     }

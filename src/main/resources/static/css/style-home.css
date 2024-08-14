@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Buttons, inputs and labels */
 
 .text-purple {
@@ -68,15 +74,25 @@
 }
 
 .btn{
-	background-color: #6f42c1;
+	border: 3px solid #E32652;;
 	transition: .3s;
-	border: 0px;
+	color: #e5e8ee;
+	border-radius: 6px;
 }
 
 .btn:hover{
-	background-color: #6f42c1;
+	color: #e5e8ee;
+	background-color: #E32652;
 }
 
-.btn:active{
-	background-color: #6f42c1;
+.manage-course{
+	margin-right: 8px;
+}
+
+.fa-solid{
+	color: #E32652;
+}
+
+.btn:hover .fa-solid{
+	color: #e5e8ee;
 }

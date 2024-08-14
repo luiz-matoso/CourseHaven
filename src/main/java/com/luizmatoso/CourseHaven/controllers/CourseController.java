@@ -27,9 +27,17 @@ public class CourseController {
     private UserService userService;
 
     @GetMapping("/home")
-    public String showCourses(Model model) {
+    public String showCourses(Model model, Principal loggedUser) {
         List<Course> courses = courseService.findAll();
         model.addAttribute("courses", courses);
+
+        if (loggedUser != null){
+            String username = loggedUser.getName();
+            User user = userService.findByUsername(username);
+            model.addAttribute("firstName", user.getFirstName());
+            model.addAttribute("userRole", user.getUserRole().name());
+        }
+
         return "website/home";
     }
 
@@ -40,7 +48,7 @@ public class CourseController {
         return "course-details"; 
     }
 
-    @GetMapping("/courses/create")
+    @GetMapping("/teacher/edit/course")
     public String showCreateCourseForm(Model model, @RequestParam(required = false) Long courseId) {
         Course course;
         if (courseId != null) {
@@ -49,7 +57,7 @@ public class CourseController {
             course = new Course();
         }
         model.addAttribute("course", course);
-        return "website/post-course";
+        return "teacher-management/edit-course";
     }
 
     @PostMapping("/courses")
@@ -57,7 +65,19 @@ public class CourseController {
         User user = userService.findByUsername(loggedUser.getName());
         course.setCreatedBy(user);
         courseService.saveCourse(course, user.getId());
-        return "redirect:/home";
+        return "redirect:/teacher/my/courses";
     }
 
+    @GetMapping("/teacher/remove/course/{id}")
+    public String removeCourse(@PathVariable Long id, Principal loggedUser){
+        User user = userService.findByUsername(loggedUser.getName());
+        Course course = courseService.findCourseById(id);
+
+        if (course != null && course.getCreatedBy().getId().equals(user.getId())){
+            courseService.deleteCourseById(id);
+        }
+
+        return "redirect:/teacher/my/courses";
+
+    }
 }

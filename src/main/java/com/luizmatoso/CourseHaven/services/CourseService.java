@@ -41,4 +41,8 @@ public class CourseService {
         return courseRepository.findByCreatedById(userId);
     }
 
+    public void deleteCourseById(Long id) {
+        courseRepository.deleteById(id);
+    }    
+
 }

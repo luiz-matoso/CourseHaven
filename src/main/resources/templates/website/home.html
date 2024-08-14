@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="https://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="https://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CourseHaven</title>
     <link rel="icon" href="https://i.ibb.co/N6VG66D/ICON.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/style-home.css}">
 </head>
 <body class="bg-dark-custom text-light-custom">
@@ -25,8 +26,14 @@
                         <a class="nav-link active text-light-custom" aria-current="page" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light-custom" href="/signin">Sign in</a>
+                        <a class="nav-link text-light-custom" th:if="${firstName != null}" th:text="'Hello, ' + ${firstName} + '!'"></a>
+                        <a class="btn" th:if="${firstName == null}" href="/signin"><i class="fa-solid fa-arrow-up-right-from-square"></i> Sign In</a>
                     </li>
+                    <li>
+                        <a href="/teacher/management" th:if="${userRole == 'ROLE_TEACHER'}" class="btn manage-course"><i class="fa-solid fa-screwdriver-wrench"></i> Manage Courses</a>
+                    <li>
+                        <a href="/logout" th:if="${firstName != null}" class="btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                    </li>                    
                 </ul>
             </div>
         </div>

@@ -25,10 +25,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeHttpRequests(authz -> authz
-                .requestMatchers("/signup", "/signin", "/css/**").permitAll()
-                .requestMatchers("/teacher/management", "/teacher/my/courses", "/teacher/create/courses").hasAuthority("ROLE_TEACHER")
-                .anyRequest().authenticated()
+        .authorizeHttpRequests(authz -> authz
+            .requestMatchers("/signup", "/signin", "/css/**", "/home").permitAll()  // Corrigir aqui
+            .requestMatchers("/teacher/management", "/teacher/my/courses", "/teacher/create/courses").hasAuthority("ROLE_TEACHER")
+            .anyRequest().authenticated()
             )
             .formLogin(form -> form
                 .loginPage("/signin")
@@ -40,9 +40,14 @@ public class SecurityConfig {
                 .accessDeniedPage("/error/403")
             )
             .logout(logout -> logout
-                .logoutUrl("/perform_logout")
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/signin?logout")
+                .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
-            );
+                .permitAll()
+            )
+            .csrf().disable();
+        
         return http.build();
     }
 

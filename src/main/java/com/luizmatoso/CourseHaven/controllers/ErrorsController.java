@@ -10,9 +10,4 @@ public class ErrorsController{
     public String accessDenied() {
         return "error/403"; 
     }
-
-    @GetMapping("/error/401")
-    public String unauthorized() {
-        return "error/401"; 
-    }
 }

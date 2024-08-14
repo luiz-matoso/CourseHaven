@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.luizmatoso.CourseHaven.entities.Course;
 import com.luizmatoso.CourseHaven.entities.User;
@@ -29,7 +31,7 @@ public class TeacherCoursesController {
             User user = userService.findByUsername(username);
             model.addAttribute("firstName", user.getFirstName());
         }
-        return "website/teacher-management";
+        return "teacher-management/teacher-management";
     }
 
     @GetMapping("/teacher/my/courses")
@@ -37,11 +39,20 @@ public class TeacherCoursesController {
         User user = userService.findByUsername(loggedUser.getName());
         List<Course> myCourses = courseService.findCoursesByUser(user.getId());
         model.addAttribute("myCourses", myCourses);
-        return "website/my-courses";
+        return "teacher-management/my-courses";
     }
 
     @GetMapping("/teacher/create/courses")
-    public String createCoursePage() {
-        return "website/create-course";
+    public String createCoursePage(Model model) {
+        model.addAttribute("course", new Course());
+        return "teacher-management/create-course";
+    }
+
+    @PostMapping("/teacher/create/courses")
+    public String createCourse(@ModelAttribute Course course, Principal loggedUser) {
+        User user = userService.findByUsername(loggedUser.getName());
+        course.setCreatedBy(user);
+        courseService.saveCourse(course, user.getId());
+        return "redirect:/teacher/my/courses";
     }
 }

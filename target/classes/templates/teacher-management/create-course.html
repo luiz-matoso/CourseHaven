@@ -16,38 +16,38 @@
                 <form th:action="@{/courses}" th:object="${course}" method="post">
                     <!-- Hidden field for course ID -->
                     <input type="hidden" th:field="*{id}" />
+                    
                     <div class="form-group">
                         <input type="text" id="title" class="form-control" th:field="*{title}" required placeholder=" " />
                         <label for="title">Title</label>
                     </div>
+                    
                     <div class="form-group">
-                        <input id="description" class="form-control" th:field="*{description}" required placeholder=" ">
+                        <input id="description" class="form-control" th:field="*{description}" required placeholder=" " />
                         <label for="description">Description</label>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="price" class="form-control" th:field="*{price}" required placeholder=" " />
-                        <label for="price">Price</label>
-                    </div>
+                    
                     <div class="form-group">
                         <input type="text" id="demoVideo" class="form-control" th:field="*{demoVideo}" placeholder=" " />
                         <label for="demoVideo">Introduction Video URL</label>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="minutes" class="form-control" th:field="*{minutes}" required placeholder=" " />
-                        <label for="minutes">Minutes</label>
-                    </div>
+                    
                     <div class="form-group">
                         <input type="text" id="category" class="form-control" th:field="*{category}" required placeholder=" " />
                         <label for="category">Category</label>
-                    </div>
+                    </div>   
+                        
                     <div class="form-group">
-                        <input type="text" id="language" class="form-control" th:field="*{language}" required placeholder=" " />
-                        <label for="language">Language</label>
-                    </div>
+                        <select class="form-control" id="language" name="language.id" required="true">
+                            <option value="" disabled selected>Select Language</option>
+                            <option th:each="language : ${languages}" th:value="${language.id}" th:text="${language.name}"></option>
+                        </select>
+                    </div>    
+                    
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;"><i class="fa-solid fa-circle-check"></i> Create Course</button>
                         <button type="button" class="btn btn-primary" style="width: 100%;" onclick="window.location.href='/teacher/management';"><i class="fa-solid fa-left-long"></i> Back</button>
-                    </div>                    
+                    </div>
                 </form>
             </div>
         </div>

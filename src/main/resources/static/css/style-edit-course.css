@@ -64,7 +64,6 @@ h1 {
     box-shadow: none;
 }
 
-/* Mantém o estilo de foco customizado */
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group input:not(:placeholder-shown),
@@ -87,6 +86,34 @@ h1 {
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: transparent;
+}
+
+.input-field select.input {
+    height: 45px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    color: #e5e8ee;
+    padding: 10px;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+.input-field select.input:focus {
+    border-bottom: 1px solid #E32652; 
+}
+
+.input-field select.input option {
+    background-color: #121212;
+    color: #e5e8ee;
+}
+
+.input-field select.input option[disabled] {
+    color: rgba(229, 232, 238, 0.6); /* Placeholder color */
 }
 
 .btn-primary {

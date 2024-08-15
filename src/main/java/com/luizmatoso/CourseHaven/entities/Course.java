@@ -1,10 +1,13 @@
 package com.luizmatoso.CourseHaven.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,13 +25,20 @@ public class Course {
     private Long id;
     private String title;
     private String description;
-    private Double price;
     private String demoVideo;
-    private Integer minutes;
     private String category;
-    private String language;
 
     @ManyToOne
     private User createdBy;
+
+    @ManyToOne
+    private Language language;
+    
+    @OneToMany(mappedBy = "course")
+    private List<Lesson> lessons;
+
+    public int getLessonCount() {
+        return lessons != null ? lessons.size() : 0;
+    }
 
 }

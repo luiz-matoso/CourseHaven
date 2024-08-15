@@ -21,20 +21,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link active text-light-custom" aria-current="page" href="/home">Home</a>
                     </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link text-light-custom" th:if="${firstName != null}" th:utext="|Hello, ${firstName} ${lastName}!|"></a>
                         <a class="nav-link text-light-custom" th:if="${firstName == null}" href="/signin">Sign In</a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a href="/signup" th:if="${firstName == null}" class="btn btn2">Sign up</a>
                     </li>  
-                    <li>
+                    <li class="nav-item">
                         <a href="/teacher/management" th:if="${userRole == 'ROLE_TEACHER'}" class="btn manage-course"><i class="fa-solid fa-screwdriver-wrench"></i> Manage Courses</a>
-                    <li>
+                    </li>
+                    <li class="nav-item">
                         <a href="/logout" th:if="${firstName != null}" class="btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
                     </li>                                      
                 </ul>
@@ -52,12 +55,11 @@
                     </video>
                     <div class="card-body">
                         <h5 class="card-title" th:text="${course.title}">Course Name</h5>
-                        <p class="card-price" th:text="'$ ' + ${course.price}">Course Price</p>
                         <p class="card-text" th:text="${course.description}">Course Description</p>
-                        <p class="card-text" th:text="'Language: ' + ${course.language}">Course Language</p>
+                        <p class="card-text" th:text="'Language: ' + ${course.language.name}">Course Language</p>
                         <p class="card-text" th:text="'Category: ' + ${course.category}">Course Category</p>
-                        <p class="card-text" th:text="${course.minutes} + ' minutes'">Course Duration</p>
-                        <p class="card-text last-card" th:text="'Teacher: ' + ${course.createdBy.username}">Course Teacher</p>						
+                        <p class="card-text" th:text="'Lessons: ' + ${course.lessonCount}">Number of Lessons</p>
+                        <p class="card-text last-card" th:text="'Teacher: ' + ${course.createdBy.firstName}">Course Teacher</p>						
                         <a href="#" class="btn watch">Watch now</a>
                     </div>
                 </div>

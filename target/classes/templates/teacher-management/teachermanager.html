@@ -54,12 +54,11 @@
                     </video>
                     <div class="card-body">
                         <h5 class="card-title" th:text="${course.title}">Course Name</h5>
-                        <p class="card-price" th:text="'$ ' + ${course.price}">Course Price</p>
                         <p class="card-text" th:text="${course.description}">Course Description</p>
-                        <p class="card-text" th:text="'Language: ' + ${course.language}">Course Language</p>
+                        <p class="card-text" th:text="'Language: ' + ${course.language.name}">Course Language</p>
                         <p class="card-text" th:text="'Category: ' + ${course.category}">Course Category</p>
-                        <p class="card-text" th:text="${course.minutes} + ' minutes'">Course Duration</p>
-                        <p class="card-text last-card" th:text="'Teacher: ' + ${course.createdBy.username}">Course Teacher</p>				
+                        <p class="card-text" th:text="'Lessons: ' + ${course.lessonCount}">Number of Lessons</p>
+                        <p class="card-text last-card" th:text="'Teacher: ' + ${course.createdBy.firstName}">Course Teacher</p>						
                         <a th:href="@{/teacher/edit/course(courseId=${course.id})}" class="btn btn2">Edit</a>
                         <a th:href="@{/teacher/edit/course(courseId=${course.id})}" class="btn btn2">Add lessons</a>
                         <a th:href="@{|/teacher/remove/course/${course.id}|}" class="btn btn2 ">Remove</a>

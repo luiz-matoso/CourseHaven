@@ -35,6 +35,7 @@ public class CourseController {
             String username = loggedUser.getName();
             User user = userService.findByUsername(username);
             model.addAttribute("firstName", user.getFirstName());
+            model.addAttribute("lastName", user.getLastName());
             model.addAttribute("userRole", user.getUserRole().name());
         }
 

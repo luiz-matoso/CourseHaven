@@ -24,6 +24,12 @@
     color: #6c757d;
 }
 
+/* texts */
+
+h2{
+    text-align: left;
+}
+
 /* Logo */
 
 .img-logo{
@@ -77,26 +83,25 @@
 	margin-bottom: 20px;
 }
 
-/* Buttons */
-
 .btn{
-	border: 2px solid #E32652;
+	border: 2px solid #5bfaa2;
 	transition: .3s;
 	color: #e5e8ee;
 	border-radius: 6px;
 }
 
 .btn2{
-	background-color: #121212;
-	border: 1px solid #E32652;
+    border: 0px;
+	background-color: #5bfaa2;
 	transition: .3s;
-	color: #e5e8ee;
+	color: #121212;
 	border-radius: 6px;
+    font-weight: bold;
 }
 
 .btn:hover{
-	color: #e5e8ee;
-	background-color: #E32652;
+	color: #121212;
+    background-color: #5bfaa2;
 }
 
 .manage-course{
@@ -108,19 +113,37 @@
 } */
 
 .btn:hover .fa-solid{
-	color: #e5e8ee;
+	color: #121212;
 }
 
-.hello{
-	border: 3px solid #E32652;;
-	background-color: #E32652;
-	color: #e5e8ee;
-	margin-right: 8px;
-	border-radius: 6px;
+.nav-link{
+    margin-left: 20px;
 }
 
-.watch{
-	background-color: #E32652;
-	border: 0px;
-	font-weight: bold;
+
+/* Create course button */
+
+.btn-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #5bfaa2;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-float:hover {
+    background-color: #73fab0;
+    transform: scale(1.1);
+}
+
+.btn-float i {
+    color: #121212;
+    margin-top: 14px;
 }

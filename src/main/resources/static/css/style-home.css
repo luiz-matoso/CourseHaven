@@ -37,6 +37,10 @@
 	transform: scale(1.2);
 }
 
+.img2{
+	margin-left: 20px;
+}
+
 /* Course's cards */
 
 /* .card-promotion{
@@ -73,8 +77,18 @@
 	margin-bottom: 20px;
 }
 
+/* Buttons */
+
 .btn{
-	border: 3px solid #E32652;;
+	border: 2px solid #E32652;
+	transition: .3s;
+	color: #e5e8ee;
+	border-radius: 6px;
+}
+
+.btn2{
+	background-color: #121212;
+	border: 1px solid #E32652;
 	transition: .3s;
 	color: #e5e8ee;
 	border-radius: 6px;
@@ -89,10 +103,24 @@
 	margin-right: 8px;
 }
 
-.fa-solid{
+/* .fa-solid{
 	color: #E32652;
-}
+} */
 
 .btn:hover .fa-solid{
 	color: #e5e8ee;
+}
+
+.hello{
+	border: 3px solid #E32652;;
+	background-color: #E32652;
+	color: #e5e8ee;
+	margin-right: 8px;
+	border-radius: 6px;
+}
+
+.watch{
+	background-color: #E32652;
+	border: 0px;
+	font-weight: bold;
 }

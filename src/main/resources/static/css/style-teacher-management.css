@@ -4,6 +4,17 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.img-logo{
+	width: 100px;
+	height: auto;
+	transition: transform .6s;
+}
+
+.img-logo:hover{
+	cursor: pointer;
+	transform: scale(1.2);
+}
+
 body {
     display: flex;
     justify-content: center;

@@ -12,7 +12,7 @@
     <div class="split left">
         <div class="centered">
             <div class="container mt-5">
-                <h1>Edit your course</h1>
+                <h1>Create your course</h1>
                 <form th:action="@{/courses}" th:object="${course}" method="post">
                     <!-- Hidden field for course ID -->
                     <input type="hidden" th:field="*{id}" />
@@ -45,8 +45,8 @@
                         <label for="language">Language</label>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;"><i class="fa-solid fa-circle-check"></i> Update Course</button>
-                        <button type="button" class="btn btn-primary" style="width: 100%;" onclick="window.location.href='/teacher/my/courses';"><i class="fa-solid fa-left-long"></i> Back</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;"><i class="fa-solid fa-circle-check"></i> Create Course</button>
+                        <button type="button" class="btn btn-primary" style="width: 100%;" onclick="window.location.href='/teacher/management';"><i class="fa-solid fa-left-long"></i> Back</button>
                     </div>                    
                 </form>
             </div>

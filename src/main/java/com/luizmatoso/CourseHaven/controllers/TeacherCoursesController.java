@@ -31,7 +31,11 @@ public class TeacherCoursesController {
             User user = userService.findByUsername(username);
             model.addAttribute("firstName", user.getFirstName());
         }
-        return "teacher-management/teacher-management";
+
+        User user = userService.findByUsername(loggedUser.getName());
+        List<Course> myCourses = courseService.findCoursesByUser(user.getId());
+        model.addAttribute("myCourses", myCourses);
+        return "teacher-management/teachermanager";
     }
 
     @GetMapping("/teacher/my/courses")
@@ -39,7 +43,7 @@ public class TeacherCoursesController {
         User user = userService.findByUsername(loggedUser.getName());
         List<Course> myCourses = courseService.findCoursesByUser(user.getId());
         model.addAttribute("myCourses", myCourses);
-        return "teacher-management/my-courses";
+        return "teacher-management/teachermanager";
     }
 
     @GetMapping("/teacher/create/courses")

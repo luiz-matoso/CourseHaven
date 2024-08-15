@@ -6,11 +6,24 @@
 
 body{
     background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 500px;
+    padding: 20px;
+    background-color: #121212;
+    border-radius: 8px;
 }
 
 h1 {
     color: #E32652;
-    margin-bottom: 80px;
+    margin-bottom: 40px; /* Reduzi o espaçamento inferior */
+    text-align: center;
 }
 
 .form-group {
@@ -30,7 +43,7 @@ h1 {
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 100%; /* Ajusta a largura para ocupar o container */
     padding: 10px 10px 10px 10px;
     background-color: #121212;
     border: none;
@@ -80,6 +93,8 @@ h1 {
     background: #121212;
     transition: 0.4s;
     color: #fff;
+    width: 100%;
+    cursor: pointer;
 }
 
 .btn-primary:hover {

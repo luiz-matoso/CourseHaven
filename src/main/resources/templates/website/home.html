@@ -26,14 +26,17 @@
                         <a class="nav-link active text-light-custom" aria-current="page" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light-custom" th:if="${firstName != null}" th:text="'Hello, ' + ${firstName} + '!'"></a>
-                        <a class="btn" th:if="${firstName == null}" href="/signin"><i class="fa-solid fa-arrow-up-right-from-square"></i> Sign In</a>
+                        <a class="nav-link text-light-custom" th:if="${firstName != null}" th:utext="|Hello, ${firstName} ${lastName}!|"></a>
+                        <a class="nav-link text-light-custom" th:if="${firstName == null}" href="/signin">Sign In</a>
                     </li>
+                    <li>
+                        <a href="/signup" th:if="${firstName == null}" class="btn btn2">Sign up</a>
+                    </li>  
                     <li>
                         <a href="/teacher/management" th:if="${userRole == 'ROLE_TEACHER'}" class="btn manage-course"><i class="fa-solid fa-screwdriver-wrench"></i> Manage Courses</a>
                     <li>
                         <a href="/logout" th:if="${firstName != null}" class="btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-                    </li>                    
+                    </li>                                      
                 </ul>
             </div>
         </div>
@@ -55,7 +58,7 @@
                         <p class="card-text" th:text="'Category: ' + ${course.category}">Course Category</p>
                         <p class="card-text" th:text="${course.minutes} + ' minutes'">Course Duration</p>
                         <p class="card-text last-card" th:text="'Teacher: ' + ${course.createdBy.username}">Course Teacher</p>						
-                        <a href="#" class="btn btn-primary">Watch now</a>
+                        <a href="#" class="btn watch">Watch now</a>
                     </div>
                 </div>
             </div>

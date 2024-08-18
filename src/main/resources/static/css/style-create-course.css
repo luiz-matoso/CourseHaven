@@ -21,7 +21,7 @@ body{
 }
 
 h1 {
-    color: #E32652;
+    color: #5bfaa2;
     margin-bottom: 40px; /* Reduzi o espaçamento inferior */
     text-align: center;
 }
@@ -65,7 +65,7 @@ h1 {
 .form-group textarea:focus,
 .form-group input:not(:placeholder-shown),
 .form-group textarea:not(:placeholder-shown) {
-    border-bottom: 2px solid #E32652;
+    border-bottom: 2px solid #5bfaa2;
     background-color: #121212;
     color: #e5e8ee;
     outline: none;
@@ -77,7 +77,7 @@ h1 {
 .form-group textarea:not(:placeholder-shown) ~ label {
     top: -10px;
     font-size: 12px;
-    color: #E32652;
+    color: #5bfaa2;
 }
 
 .form-group input::placeholder,
@@ -85,8 +85,37 @@ h1 {
     color: transparent;
 }
 
+.input-field select.input {
+    height: 45px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    color: #e5e8ee;
+    padding: 10px;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+.input-field select.input:focus {
+    border-bottom: 1px solid #5bfaa2; 
+}
+
+.input-field select.input option {
+    background-color: #121212;
+    color: #e5e8ee;
+}
+
+.input-field select.input option[disabled] {
+    color: rgba(229, 232, 238, 0.6); /* Placeholder color */
+}
+
+
 .btn-primary {
-    border: 1px solid #E32652;
+    border: 1px solid #5bfaa2;
     border-radius: 6px;
     outline: none;
     height: 45px;
@@ -99,5 +128,6 @@ h1 {
 
 .btn-primary:hover {
     border: 0px;
-    background: #E32652;
+    background: #5bfaa2;
+    color: #121212;
 }

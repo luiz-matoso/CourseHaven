@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Course</title>
-    <link rel="icon" href="https://i.ibb.co/N6VG66D/ICON.png">
+    <title>Create Course - Teacher</title>
+    <link rel="icon" href="https://i.ibb.co/FDrvJmG/ICON-teachers.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/style-create-course.css}">
 </head>
 <body class="bg-custom">
@@ -14,7 +15,6 @@
             <div class="container mt-5">
                 <h1>Create your course</h1>
                 <form th:action="@{/courses}" th:object="${course}" method="post">
-                    <!-- Hidden field for course ID -->
                     <input type="hidden" th:field="*{id}" />
                     
                     <div class="form-group">
@@ -35,17 +35,17 @@
                     <div class="form-group">
                         <input type="text" id="category" class="form-control" th:field="*{category}" required placeholder=" " />
                         <label for="category">Category</label>
-                    </div>   
-                        
-                    <div class="form-group">
-                        <select class="form-control" id="language" name="language.id" required="true">
+                    </div>    
+
+                    <div class="input-field">
+                        <select class="input" id="language" name="language.id" required="true">
                             <option value="" disabled selected>Select Language</option>
                             <option th:each="language : ${languages}" th:value="${language.id}" th:text="${language.name}"></option>
                         </select>
-                    </div>    
+                    </div>
                     
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;"><i class="fa-solid fa-circle-check"></i> Create Course</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;"><i class="fa-solid fa-circle-plus"></i> Create Course</button>
                         <button type="button" class="btn btn-primary" style="width: 100%;" onclick="window.location.href='/teacher/management';"><i class="fa-solid fa-left-long"></i> Back</button>
                     </div>
                 </form>

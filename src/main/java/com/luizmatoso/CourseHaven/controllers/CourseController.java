@@ -16,6 +16,7 @@ import com.luizmatoso.CourseHaven.dto.CourseDTO;
 import com.luizmatoso.CourseHaven.dto.UserDTO;
 import com.luizmatoso.CourseHaven.services.CourseService;
 import com.luizmatoso.CourseHaven.services.LanguageService;
+import com.luizmatoso.CourseHaven.services.LessonService;
 import com.luizmatoso.CourseHaven.services.UserService;
 
 @Controller
@@ -29,6 +30,9 @@ public class CourseController {
 
     @Autowired
     private LanguageService languageService;
+
+    @Autowired
+    private LessonService lessonService;
 
     @GetMapping("/home")
     public String showCourses(Model model, Principal loggedUser) {
@@ -78,7 +82,7 @@ public class CourseController {
             courseDTO.setCreatedBy(userDTO); 
             courseService.saveCourse(courseDTO, userDTO.getId());
         }
-        return "redirect:/teacher/my/courses";
+        return "redirect:/teacher/management";
     }
     
 
@@ -88,9 +92,10 @@ public class CourseController {
         CourseDTO course = courseService.findCourseById(id);
     
         if (course != null && course.getCreatedBy() != null && course.getCreatedBy().getId().equals(userDTO.getId())) {
+            lessonService.deleteLessonsByCourseId(id); // Remover lições associadas
             courseService.deleteCourseById(id);
         }
     
-        return "redirect:/teacher/my/courses";
+        return "redirect:/teacher/management";
     }    
 }

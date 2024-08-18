@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.luizmatoso.CourseHaven.dto.CourseDTO;
 import com.luizmatoso.CourseHaven.dto.LanguageDTO;
@@ -36,10 +37,12 @@ public class CourseService {
         return course != null ? convertToDTO(course) : null;
     }
 
+    @Transactional
     public void deleteCourseById(Long id) {
         courseRepository.deleteById(id);
     }    
 
+    @Transactional
     public void saveCourse(CourseDTO courseDTO, Long userId) {
         User user = userRepository.findById(userId)
             .orElseThrow(() -> new RuntimeException("User not found"));

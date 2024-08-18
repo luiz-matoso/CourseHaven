@@ -8,12 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.luizmatoso.CourseHaven.dto.CourseDTO;
+import com.luizmatoso.CourseHaven.dto.LessonDTO;
 import com.luizmatoso.CourseHaven.dto.UserDTO;
 import com.luizmatoso.CourseHaven.services.CourseService;
 import com.luizmatoso.CourseHaven.services.LanguageService;
+import com.luizmatoso.CourseHaven.services.LessonService;
 import com.luizmatoso.CourseHaven.services.UserService;
 
 @Controller
@@ -27,6 +30,9 @@ public class TeacherCoursesController {
 
     @Autowired
     private LanguageService languageService;
+
+    @Autowired
+    private LessonService lessonService;
 
     @GetMapping("/teacher/management")
     public String managementPage(Model model, Principal loggedUser) {
@@ -62,7 +68,24 @@ public class TeacherCoursesController {
         UserDTO userDTO = userService.findByUsername(loggedUser.getName());
         courseDTO.setCreatedBy(userDTO);
         courseService.saveCourse(courseDTO, userDTO.getId());
-        return "redirect:/teacher/my/courses";
+        return "redirect:/teacher/management";
+    }
+
+    @GetMapping("/teacher/add/lesson/{courseId}")
+    public String showAddLessonForm(@PathVariable Long courseId, Model model) {
+        LessonDTO lesson = new LessonDTO();
+        CourseDTO course = courseService.findCourseById(courseId);
+        lesson.setCourseId(courseId);
+        model.addAttribute("courseName", course.getTitle());
+        model.addAttribute("lesson", lesson);
+        return "teacher-management/add-lesson"; // Verifique se o caminho para o template está correto
+    }    
+
+
+    @PostMapping("/lessons/add")
+    public String addLesson(@ModelAttribute LessonDTO lessonDTO) {
+        lessonService.saveLesson(lessonDTO);
+        return "redirect:/teacher/management";
     }
     
 }

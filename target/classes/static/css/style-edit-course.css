@@ -26,7 +26,7 @@
 }
 
 h1 {
-    color: #E32652;
+    color: #5bfaa2;
     margin-bottom: 60px;
 }
 
@@ -68,7 +68,7 @@ h1 {
 .form-group textarea:focus,
 .form-group input:not(:placeholder-shown),
 .form-group textarea:not(:placeholder-shown) {
-    border-bottom: 2px solid #E32652;
+    border-bottom: 2px solid #5bfaa2;
     background-color: #121212;
     color: #e5e8ee;
     outline: none;
@@ -80,7 +80,7 @@ h1 {
 .form-group textarea:not(:placeholder-shown) ~ label {
     top: -10px;
     font-size: 12px;
-    color: #E32652;
+    color: #5bfaa2;
 }
 
 .form-group input::placeholder,
@@ -104,7 +104,7 @@ h1 {
 }
 
 .input-field select.input:focus {
-    border-bottom: 1px solid #E32652; 
+    border-bottom: 1px solid #5bfaa2; 
 }
 
 .input-field select.input option {
@@ -117,18 +117,30 @@ h1 {
 }
 
 .btn-primary {
-    border: 1px solid #E32652;
+    border: 1px solid #5bfaa2;
     border-radius: 6px;
     outline: none;
-    height: 45px;
+    height: 38px;
     background: #121212;
     transition: 0.4s;
     color: #fff;
 }
 
 .btn-primary:hover {
+    color: #121212;
     border: 0px;
-    background: #E32652;
+    background: #5bfaa2;
+}
+
+.btn-watch{
+    font-weight: bolder;
+    border: 1px solid #E32652;
+    background-color: #E32652;
+}
+
+.btn-watch:hover{
+    color: #fff;
+    background-color: #E32652;
 }
 
 

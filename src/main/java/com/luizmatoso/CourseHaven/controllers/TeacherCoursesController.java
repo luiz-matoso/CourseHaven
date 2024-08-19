@@ -78,9 +78,8 @@ public class TeacherCoursesController {
         lesson.setCourseId(courseId);
         model.addAttribute("courseName", course.getTitle());
         model.addAttribute("lesson", lesson);
-        return "teacher-management/add-lesson"; // Verifique se o caminho para o template está correto
+        return "teacher-management/add-lesson";
     }    
-
 
     @PostMapping("/lessons/add")
     public String addLesson(@ModelAttribute LessonDTO lessonDTO) {

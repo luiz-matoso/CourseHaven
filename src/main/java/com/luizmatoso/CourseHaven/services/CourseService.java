@@ -49,7 +49,6 @@ public class CourseService {
         
         Course course;
         if (courseDTO.getId() != null) {
-            // Atualiza o curso existente
             course = courseRepository.findById(courseDTO.getId())
                 .orElseThrow(() -> new RuntimeException("Course not found"));
             course.setTitle(courseDTO.getTitle());

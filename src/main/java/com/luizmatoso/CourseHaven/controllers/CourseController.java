@@ -92,7 +92,7 @@ public class CourseController {
         CourseDTO course = courseService.findCourseById(id);
     
         if (course != null && course.getCreatedBy() != null && course.getCreatedBy().getId().equals(userDTO.getId())) {
-            lessonService.deleteLessonsByCourseId(id); // Remover lições associadas
+            lessonService.deleteLessonsByCourseId(id);
             courseService.deleteCourseById(id);
         }
     

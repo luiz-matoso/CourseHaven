@@ -22,7 +22,7 @@ body{
 
 h1 {
     color: #5bfaa2;
-    margin-bottom: 40px; /* Reduzi o espaçamento inferior */
+    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -43,7 +43,7 @@ h1 {
 
 .form-group input,
 .form-group textarea {
-    width: 100%; /* Ajusta a largura para ocupar o container */
+    width: 100%;
     padding: 10px 10px 10px 10px;
     background-color: #121212;
     border: none;
@@ -60,7 +60,6 @@ h1 {
     box-shadow: none;
 }
 
-/* Mantém o estilo de foco customizado */
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group input:not(:placeholder-shown),
@@ -110,9 +109,8 @@ h1 {
 }
 
 .input-field select.input option[disabled] {
-    color: rgba(229, 232, 238, 0.6); /* Placeholder color */
+    color: rgba(229, 232, 238, 0.6);
 }
-
 
 .btn-primary {
     border: 1px solid #5bfaa2;

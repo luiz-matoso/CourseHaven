@@ -45,7 +45,7 @@ public class TeacherCoursesController {
         UserDTO userDTO = userService.findByUsername(loggedUser.getName());
         List<CourseDTO> myCourses = courseService.findCoursesByUser(userDTO.getId());
         model.addAttribute("myCourses", myCourses);
-        return "teacher-management/teachermanager";
+        return "teacher-management/teacher-management";
     }
 
     @GetMapping("/teacher/my/courses")
@@ -53,7 +53,7 @@ public class TeacherCoursesController {
         UserDTO userDTO = userService.findByUsername(loggedUser.getName());
         List<CourseDTO> myCourses = courseService.findCoursesByUser(userDTO.getId());
         model.addAttribute("myCourses", myCourses);
-        return "teacher-management/teachermanager";
+        return "teacher-management/teacher-management";
     }
 
     @GetMapping("/teacher/create/courses")

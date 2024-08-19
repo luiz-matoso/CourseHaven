@@ -28,7 +28,9 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-light-custom" th:if="${firstName != null}" th:utext="|Hello, ${firstName} ${lastName}!|"></a>
+                        <a class="nav-link text-light-custom hello-user" th:if="${firstName != null}">
+                            <i class="fa-solid fa-user"></i> <span th:utext="|Hello, ${firstName} ${lastName}!|"></span>
+                        </a>                        
                         <a class="nav-link text-light-custom" th:if="${firstName == null}" href="/signin">Sign In</a>
                     </li>
                     <li class="nav-item">
@@ -56,16 +58,47 @@
                     <div class="card-body">
                         <h5 class="card-title" th:text="${course.title}">Course Name</h5>
                         <p class="card-text" th:text="${course.description}">Course Description</p>
-                        <p class="card-text" th:text="'Language: ' + ${course.language.name}">Course Language</p>
-                        <p class="card-text" th:text="'Category: ' + ${course.category}">Course Category</p>
-                        <p class="card-text" th:text="'Lessons: ' + ${course.lessonCount}">Number of Lessons</p>
-                        <p class="card-text last-card" th:text="'Teacher: ' + ${course.createdBy.firstName}">Course Teacher</p>						
+                        <p class="card-text"><strong th:text="'Language: '"></strong><span th:text="${course.language.name}"></span></p>
+                        <p class="card-text"><strong th:text="'Category: '"></strong><span th:text="${course.category}"></span></p>
+                        <p class="card-text"><strong th:text="'Lessons: '"></strong><span th:text="${course.lessonCount}"></span></p>
+                        <p class="card-text last-card"><strong th:text="'Teacher: '"></strong><span th:text="${course.createdBy.firstName} + ' ' + ${course.createdBy.lastName}"></span></p>
                         <a href="#" class="btn watch">Watch now</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
+
+    <footer class="bg-dark-custom text-light-custom py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>CourseHaven</h5>
+                    <p>Explore a wide range of courses and enhance your skills with our expert instructors.</p>
+                    <img src="https://i.ibb.co/2YFZddc/Sem-T-tulo-2.png" alt="Logo" class="img-logo">
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/home" class="text-light-custom">Home</a></li>
+                        <li><a href="/signup" class="text-light-custom">Sign Up</a></li>
+                        <li><a href="/signin" class="text-light-custom">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="d-flex">
+                        <a href="#" class="text-light-custom mr-3"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-light-custom mr-3"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#" class="text-light-custom"><i class="fab fa-linkedin fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2024 CourseHaven. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

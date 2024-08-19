@@ -66,10 +66,10 @@
                           <div class="card-body">
                             <h5 class="card-title" th:text="${course.title}">Course Name</h5>
                             <p class="card-text" th:text="${course.description}">Course Description</p>
-                            <p class="card-text" th:text="'Language: ' + ${course.language.name}">Course Language</p>
-                            <p class="card-text" th:text="'Category: ' + ${course.category}">Course Category</p>
-                            <p class="card-text" th:text="'Lessons: ' + ${course.lessonCount}">Number of Lessons</p>
-                            <p class="card-text last-card" th:text="'Teacher: ' + ${course.createdBy.firstName}">Course Teacher</p>			                        
+                            <p class="card-text"><strong th:text="'Language: '"></strong><span th:text="${course.language.name}"></span></p>
+                            <p class="card-text"><strong th:text="'Category: '"></strong><span th:text="${course.category}"></span></p>
+                            <p class="card-text"><strong th:text="'Lessons: '"></strong><span th:text="${course.lessonCount}"></span></p>
+                            <p class="card-text last-card"><strong th:text="'Teacher: '"></strong><span th:text="${course.createdBy.firstName} + ' ' + ${course.createdBy.lastName}"></span></p> 		                        
                               <a href="#" class="btn btn-primary btn-watch">Watch now</a>
                           </div>
                       </div>

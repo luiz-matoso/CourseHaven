@@ -113,7 +113,7 @@ h1 {
 }
 
 .input-field select.input option[disabled] {
-    color: rgba(229, 232, 238, 0.6); /* Placeholder color */
+    color: rgba(229, 232, 238, 0.6);
 }
 
 .btn-primary {

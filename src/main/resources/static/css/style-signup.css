@@ -99,7 +99,7 @@ i {
     flex-direction: column;
     position: relative;
     padding: 0 10px;
-    margin-bottom: 20px; /* Add margin-bottom to all input fields */
+    margin-bottom: 20px;
 }
 
 .input {
@@ -157,7 +157,7 @@ i {
 }
 
 .input-field select.input option[disabled] {
-    color: rgba(229, 232, 238, 0.6); /* Placeholder color */
+    color: rgba(229, 232, 238, 0.6);
 }
 
 .submit {
@@ -181,6 +181,10 @@ i {
     margin-top: 25px;
 }
 
+span{
+    color: #e5e8ee;
+}
+
 span a {
     text-decoration: none;
     font-weight: 700;
@@ -201,7 +205,7 @@ span a:hover {
 
 .input-fields-row .input-field {
     flex: 1;
-    margin-bottom: 0; /* Remove bottom margin for fields in this row */
+    margin-bottom: 0;
 }
 
 @media only screen and (max-width: 768px) {

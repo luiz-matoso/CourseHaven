@@ -1,6 +1,6 @@
 # **CourseHaven** 🎓
 
-![CourseHaven Logo](images\logo3.png)
+![CourseHaven Logo](images/logo3.png)
 
 **CourseHaven** is a comprehensive online course platform that enables teachers to create, edit, and manage their courses, while students can explore and enroll in courses. It features a dynamic management page accessible only to teachers.
 
@@ -15,6 +15,8 @@
 7. [License](#license) 📜
 8. [Contact](#contact) 📧
 
+<a name="features"></a>
+
 ## **Features** ✨
 
 - **User Registration & Authentication**: Secure registration system with distinct roles for Students and Teachers.
@@ -22,6 +24,8 @@
 - **Responsive Design**: A modern interface optimized for various screen sizes.
 - **Course Enrollment**: Students can browse and enroll in courses.
 - **Admin Page**: Secure management page for teachers to manage their content.
+
+<a name="installation"></a>
 
 ## **Installation** ⚙️
 
@@ -56,6 +60,8 @@
     mvn spring-boot:run
     ```
 
+<a name="usage"></a>
+
 ## **Usage** 💻
 
 1. Access the application via `http://localhost:8080`.
@@ -63,23 +69,27 @@
 3. Teachers can access the management panel at `/teacher/management` to manage courses.
 4. Students can browse and enroll in courses on the home page.
 
+<a name="screenshots"></a>
+
 ## **Screenshots** 🖼️
 
 ### **Home Page** 🏠
 
-![Home Page](images\home_page.gif)
+![Home Page](images/home_page.gif)
 
 ### **Teacher Management Panel** 🎓
 
-![Teacher Management Panel](images\teacher_page.gif)
+![Teacher Management Panel](images/teacher_page.gif)
 
 ### **Edit Course** 📝
 
-![Add Lesson](images\edit_course_page.png)
+![Edit Course](images/edit_course_page.png)
 
 ### **User Registration** 🔑
 
-![User Registration](images\signup_page.png)
+![User Registration](images/signup_page.png)
+
+<a name="technologies-used"></a>
 
 ## **Technologies Used** 🛠️
 
@@ -88,13 +98,19 @@
 - **Authentication**: Spring Security
 - **Database**: Postgres
 
+<a name="contributing"></a>
+
 ## **Contributing** 🤝
 
 Contributions are welcome! Please fork this repository and submit a pull request for review.
 
+<a name="license"></a>
+
 ## **License** 📜
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+<a name="contact"></a>
 
 ## **Contact** 📧
 
